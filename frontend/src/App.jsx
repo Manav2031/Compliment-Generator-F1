@@ -143,9 +143,9 @@ export default function App() {
 
       {/* Main content container */}
       <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-10 lg:gap-80 z-10 mb-8 lg:my-auto px-2 sm:px-4">
-        {/* Photo gallery section */}
+        {/* Photo gallery section - Taller height for mobile */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="relative w-full h-[55vh] sm:h-[60vh] lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
+          <div className="relative w-full aspect-[10/11] lg:aspect-auto lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
             <img
               src={sisterPhotos[currentPhotoIndex]}
               alt="My wonderful sister"
@@ -159,7 +159,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* Compliment section - Dynamically fits content perfectly without empty space */}
+        {/* Compliment section - Dynamically fits content without empty space */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
           <div className="bg-white/95 backdrop-blur-md p-5 sm:p-8 rounded-3xl shadow-2xl w-full h-auto flex flex-col items-center border border-pink-200 relative gap-4">
             {/* Top F1 Status Bar */}
