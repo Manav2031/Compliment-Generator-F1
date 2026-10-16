@@ -138,14 +138,14 @@ export default function App() {
       {showConfetti && <Confetti />}
       <audio ref={audioRef} src={song} loop />
 
-      {/* Top spacer: 32vh pushes stacked boxes down cleanly below the driver's face */}
-      <div className="h-[32vh] sm:h-[30vh] lg:h-0 w-full z-10 shrink-0"></div>
+      {/* Top spacer (50vh) keeps driver's cap and face completely unobstructed at the top */}
+      <div className="h-[50vh] sm:h-[45vh] lg:h-0 w-full z-10 shrink-0"></div>
 
       {/* Main content container */}
-      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-60 z-10 mb-2 lg:my-auto">
-        {/* Photo gallery section with substantial mobile size */}
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-10 lg:gap-60 z-10 mb-8 lg:my-auto">
+        {/* Photo gallery section - Maximum mobile height and width */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="relative w-[95%] max-w-md h-72 sm:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
+          <div className="relative w-full max-w-lg h-96 sm:h-[420px] lg:h-[450px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
             <img
               src={sisterPhotos[currentPhotoIndex]}
               alt="My wonderful sister"
@@ -154,24 +154,24 @@ export default function App() {
           </div>
         </div>
 
-        {/* Compliment section with substantial mobile size */}
+        {/* Compliment section - Maximum mobile height and padding */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-2xl w-[95%] max-w-md border border-pink-200">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-pink-700">
+          <div className="bg-white/90 backdrop-blur-md p-7 sm:p-10 rounded-3xl shadow-2xl w-full max-w-lg border border-pink-200">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-pink-700">
               Hey My dear F1 Best Friend 💖
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl mb-5 sm:mb-6 text-gray-700 min-h-[56px] flex items-center justify-center">
+            <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 text-gray-700 min-h-[72px] flex items-center justify-center">
               {typedText}
             </p>
             <button
               onClick={getRandomCompliment}
-              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-full transition w-full shadow-md hover:shadow-lg text-base"
+              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 px-8 rounded-full transition w-full shadow-md hover:shadow-lg text-lg"
             >
               Get Compliment 💬
             </button>
             <button
               onClick={toggleMute}
-              className="text-xs sm:text-sm text-gray-700 underline mt-3 sm:mt-4 hover:text-pink-600 block mx-auto"
+              className="text-sm sm:text-base text-gray-700 underline mt-5 hover:text-pink-600 block mx-auto"
             >
               {isMuted ? "🔈 Unmute Music" : "🔇 Mute Music"}
             </button>
@@ -179,8 +179,8 @@ export default function App() {
         </div>
       </div>
 
-      {/* Footer pulled up tighter to the bottom */}
-      <footer className="text-white/90 text-xs sm:text-sm mt-2 sm:mt-4 px-4 py-1.5 sm:py-2 rounded-full bg-black/50 backdrop-blur-sm z-10 shrink-0 mb-2">
+      {/* Footer at the bottom of the scroll view */}
+      <footer className="text-white/90 text-xs sm:text-sm mt-6 px-5 py-2.5 rounded-full bg-black/50 backdrop-blur-sm z-10 shrink-0 mb-6">
         Made with 💙 by your F1 Best Friend
       </footer>
     </div>
