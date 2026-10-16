@@ -138,10 +138,10 @@ export default function App() {
       {showConfetti && <Confetti />}
       <audio ref={audioRef} src={song} loop />
 
-      {/* Top spacer: active only on mobile screens (< 768px) to keep face/cap clear */}
-      <div className="h-[34vh] sm:h-[36vh] md:h-0 w-full z-10 shrink-0"></div>
+      {/* Top spacer (h-[28vh]) pushes the boxes slightly down on mobile */}
+      <div className="h-[28vh] sm:h-[28vh] md:h-0 w-full z-10 shrink-0"></div>
 
-      {/* Main content container: side-by-side on tablets & desktops (md:flex-row), stacked on mobile */}
+      {/* Main content container */}
       <div className="w-full max-w-7xl flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-60 z-10 mb-auto md:my-auto">
         {/* Photo gallery section */}
         <div className="w-full md:w-1/2 flex flex-col items-center">
@@ -180,7 +180,7 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      <footer className="text-white/90 text-xs sm:text-sm mt-4 sm:mt-6 px-4 py-1.5 sm:py-2 rounded-full bg-black/50 backdrop-blur-sm z-10 shrink-0">
+      <footer className="text-white/90 text-xs sm:text-sm mt-3 sm:mt-6 px-4 py-1.5 sm:py-2 rounded-full bg-black/50 backdrop-blur-sm z-10 shrink-0">
         Made with 💙 by your F1 Best Friend
       </footer>
     </div>
