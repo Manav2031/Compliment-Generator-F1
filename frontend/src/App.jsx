@@ -151,33 +151,78 @@ export default function App() {
               alt="My wonderful sister"
               className="w-full h-full object-cover object-center transition-opacity duration-500"
             />
+            {/* F1 Drivers Standings Badge on Photo */}
+            <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-white text-xs font-black px-3 py-1 rounded-full border border-white/30 flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>P1 IN MY HEART 🏆</span>
+            </div>
           </div>
         </div>
 
-        {/* Compliment section - Full width & tall height matching photo frame */}
+        {/* Compliment section tailored for F1 Super-Fans */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="bg-white/95 backdrop-blur-md p-6 sm:p-10 rounded-3xl shadow-2xl w-full h-[65vh] lg:h-[480px] flex flex-col justify-between items-center border border-pink-200">
-            <div className="w-full flex-1 flex flex-col justify-center items-center">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-pink-700">
-                Hey My dear F1 Best Friend 💖
+          <div className="bg-white/95 backdrop-blur-md p-6 sm:p-10 rounded-3xl shadow-2xl w-full h-[65vh] lg:h-[480px] flex flex-col justify-between items-center border border-pink-200 relative overflow-hidden">
+            {/* Top F1 Status Bar */}
+            <div className="w-full flex justify-between items-center bg-gray-900 text-white text-[10px] sm:text-xs font-mono font-bold px-3 py-1.5 rounded-xl">
+              <span className="text-emerald-400">● LIVE TELEMETRY</span>
+              <span className="text-yellow-400">FL: 1:12.345 🟣</span>
+              <span className="text-pink-400">DRS OPEN 🟢</span>
+            </div>
+
+            {/* Main Compliment Area */}
+            <div className="w-full flex-1 flex flex-col justify-center items-center my-2">
+              <h1 className="text-xl sm:text-3xl lg:text-4xl font-black mb-2 text-pink-700 tracking-tight">
+                Hey My F1 Bestie! 🏎️💨
               </h1>
-              <p className="text-base sm:text-xl lg:text-2xl text-gray-700 min-h-[64px] flex items-center justify-center text-center">
-                {typedText}
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-pink-500 mb-3">
+                Team Radio: "Copy, Loud & Clear" 📻
+              </p>
+              <p className="text-base sm:text-xl lg:text-2xl text-gray-800 font-medium min-h-[64px] flex items-center justify-center text-center px-2">
+                {typedText || "Hit Box Box for your race radio compliment! 🏁"}
               </p>
             </div>
 
-            <div className="w-full pt-4">
+            {/* F1 Super-Fan Pit Dashboard */}
+            <div className="w-full grid grid-cols-3 gap-2 bg-pink-50/90 p-3 rounded-2xl border border-pink-200 text-xs sm:text-sm my-2">
+              <div className="flex flex-col items-center justify-center">
+                <span className="text-gray-500 text-[9px] sm:text-[10px] font-bold uppercase">
+                  Pit Stop
+                </span>
+                <span className="font-extrabold text-gray-800 text-xs sm:text-sm">
+                  1.8s World Rec ⚡
+                </span>
+              </div>
+              <div className="flex flex-col items-center justify-center border-x border-pink-200 px-1">
+                <span className="text-gray-500 text-[9px] sm:text-[10px] font-bold uppercase">
+                  Compound
+                </span>
+                <span className="font-extrabold text-red-600 text-xs sm:text-sm">
+                  Soft C5 🔴
+                </span>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <span className="text-gray-500 text-[9px] sm:text-[10px] font-bold uppercase">
+                  Strategy
+                </span>
+                <span className="font-extrabold text-emerald-600 text-xs sm:text-sm">
+                  P1 Box Box 🏁
+                </span>
+              </div>
+            </div>
+
+            {/* F1 Race Action Buttons */}
+            <div className="w-full pt-2">
               <button
                 onClick={getRandomCompliment}
-                className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 px-6 rounded-full transition w-full shadow-lg hover:shadow-xl text-base sm:text-lg"
+                className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-extrabold py-3.5 sm:py-4 px-6 rounded-full transition w-full shadow-lg hover:shadow-xl text-base sm:text-lg flex items-center justify-center gap-2 uppercase tracking-wide"
               >
-                Get Compliment 💬
+                <span>BOX BOX FOR COMPLIMENT</span> 🏎️💨
               </button>
               <button
                 onClick={toggleMute}
-                className="text-xs sm:text-sm text-gray-700 underline mt-3 hover:text-pink-600 block mx-auto"
+                className="text-xs sm:text-sm text-gray-600 underline mt-2 hover:text-pink-600 block mx-auto font-medium"
               >
-                {isMuted ? "🔈 Unmute Music" : "🔇 Mute Music"}
+                {isMuted ? "📻 Unmute Team Radio" : "🔇 Mute Team Radio"}
               </button>
             </div>
           </div>
@@ -185,8 +230,8 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      <footer className="text-white/90 text-xs sm:text-sm mt-8 px-6 py-3 rounded-full bg-black/50 backdrop-blur-sm z-10 shrink-0 mb-8">
-        Made with 💙 by your F1 Best Friend
+      <footer className="text-white/90 text-xs sm:text-sm mt-8 px-6 py-3 rounded-full bg-black/50 backdrop-blur-sm z-10 shrink-0 mb-8 font-medium">
+        Made with 💙 by your F1 Besto 🏎️
       </footer>
     </div>
   );
