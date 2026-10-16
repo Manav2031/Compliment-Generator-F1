@@ -138,14 +138,14 @@ export default function App() {
       {showConfetti && <Confetti />}
       <audio ref={audioRef} src={song} loop />
 
-      {/* Dynamic top spacer for mobile & tablets (768px <= width <= 1000px) */}
-      <div className="h-[38vh] sm:h-28 md:h-[35vh] lg:h-0 w-full z-10 shrink-0"></div>
+      {/* Top spacer set to h-[32vh] to shift cards down slightly on mobile */}
+      <div className="h-[32vh] sm:h-28 md:h-[32vh] lg:h-0 w-full z-10 shrink-0"></div>
 
       {/* Main content container */}
       <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-60 z-10 mb-auto lg:my-auto">
         {/* Photo gallery section */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="relative w-full max-w-[270px] sm:max-w-xs lg:max-w-md h-44 sm:h-64 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
+          <div className="relative w-full max-w-[310px] sm:max-w-xs lg:max-w-md h-52 sm:h-64 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
             <img
               src={sisterPhotos[currentPhotoIndex]}
               alt="My wonderful sister"
@@ -156,22 +156,22 @@ export default function App() {
 
         {/* Compliment section */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="bg-white/90 backdrop-blur-md p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-[290px] sm:max-w-xs lg:max-w-md border border-pink-200">
-            <h1 className="text-lg sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4 text-pink-700">
+          <div className="bg-white/90 backdrop-blur-md p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-[310px] sm:max-w-xs lg:max-w-md border border-pink-200">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4 text-pink-700">
               Hey My dear F1 Best Friend 💖
             </h1>
-            <p className="text-xs sm:text-base lg:text-xl mb-3 sm:mb-6 text-gray-700 min-h-[44px] sm:min-h-[56px] flex items-center justify-center">
+            <p className="text-sm sm:text-base lg:text-xl mb-4 sm:mb-6 text-gray-700 min-h-[48px] sm:min-h-[56px] flex items-center justify-center">
               {typedText}
             </p>
             <button
               onClick={getRandomCompliment}
-              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2.5 sm:py-3 px-6 rounded-full transition w-full shadow-md hover:shadow-lg text-xs sm:text-base"
+              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2.5 sm:py-3 px-6 rounded-full transition w-full shadow-md hover:shadow-lg text-sm sm:text-base"
             >
               Get Compliment 💬
             </button>
             <button
               onClick={toggleMute}
-              className="text-xs sm:text-sm text-gray-700 underline mt-2.5 sm:mt-4 hover:text-pink-600 block mx-auto"
+              className="text-xs sm:text-sm text-gray-700 underline mt-3 sm:mt-4 hover:text-pink-600 block mx-auto"
             >
               {isMuted ? "🔈 Unmute Music" : "🔇 Mute Music"}
             </button>
@@ -180,7 +180,7 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      <footer className="text-white/90 text-xs sm:text-sm mt-6 px-4 py-1.5 sm:py-2 rounded-full bg-black/50 backdrop-blur-sm z-10 shrink-0">
+      <footer className="text-white/90 text-xs sm:text-sm mt-4 sm:mt-6 px-4 py-1.5 sm:py-2 rounded-full bg-black/50 backdrop-blur-sm z-10 shrink-0">
         Made with 💙 by your F1 Best Friend
       </footer>
     </div>
