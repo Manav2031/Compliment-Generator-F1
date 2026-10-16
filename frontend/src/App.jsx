@@ -138,52 +138,62 @@ export default function App() {
       {showConfetti && <Confetti />}
       <audio ref={audioRef} src={song} loop />
 
-      {/* Top spacer keeps driver's face & cap completely clear */}
+      {/* Top spacer keeps driver's face & cap clear */}
       <div className="h-[40vh] sm:h-[35vh] lg:h-0 w-full z-10 shrink-0"></div>
 
       {/* Main content container */}
       <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-10 lg:gap-80 z-10 mb-8 lg:my-auto px-2 sm:px-4">
-        {/* Photo gallery section - Full width & tall height */}
+        {/* Photo gallery section */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="relative w-full h-[65vh] lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
+          <div className="relative w-full h-[55vh] sm:h-[60vh] lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
             <img
               src={sisterPhotos[currentPhotoIndex]}
               alt="My wonderful sister"
               className="w-full h-full object-cover object-center transition-opacity duration-500"
             />
-            {/* F1 Drivers Standings Badge on Photo */}
-            <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-white text-xs font-black px-3 py-1 rounded-full border border-white/30 flex items-center gap-1.5">
+            {/* P1 Driver Badge */}
+            <div className="absolute top-3 left-3 bg-black/75 backdrop-blur-md text-white text-xs font-black px-3.5 py-1.5 rounded-full border border-white/30 flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
               <span>P1 IN MY HEART 🏆</span>
             </div>
           </div>
         </div>
 
-        {/* Compliment section tailored for F1 Super-Fans */}
+        {/* Compliment section - Dynamically fits content perfectly without empty space */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="bg-white/95 backdrop-blur-md p-6 sm:p-10 rounded-3xl shadow-2xl w-full h-[65vh] lg:h-[480px] flex flex-col justify-between items-center border border-pink-200 relative overflow-hidden">
+          <div className="bg-white/95 backdrop-blur-md p-5 sm:p-8 rounded-3xl shadow-2xl w-full h-auto flex flex-col items-center border border-pink-200 relative gap-4">
             {/* Top F1 Status Bar */}
-            <div className="w-full flex justify-between items-center bg-gray-900 text-white text-[10px] sm:text-xs font-mono font-bold px-3 py-1.5 rounded-xl">
-              <span className="text-emerald-400">● LIVE TELEMETRY</span>
-              <span className="text-yellow-400">FL: 1:12.345 🟣</span>
+            <div className="w-full flex justify-between items-center bg-gray-950 text-white text-[10px] sm:text-xs font-mono font-bold px-3 py-2 rounded-xl">
+              <span className="text-emerald-400 flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                LIVE TELEMETRY
+              </span>
+              <span className="text-yellow-400">GAP TO P2: +12.4s ⏱️</span>
               <span className="text-pink-400">DRS OPEN 🟢</span>
             </div>
 
-            {/* Main Compliment Area */}
-            <div className="w-full flex-1 flex flex-col justify-center items-center my-2">
-              <h1 className="text-xl sm:text-3xl lg:text-4xl font-black mb-2 text-pink-700 tracking-tight">
+            {/* Header & Subtitle */}
+            <div className="w-full flex flex-col items-center">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-pink-700 tracking-tight">
                 Hey My F1 Bestie! 🏎️💨
               </h1>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-pink-500 mb-3">
+              <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-pink-500 mt-1">
                 Team Radio: "Copy, Loud & Clear" 📻
               </p>
-              <p className="text-base sm:text-xl lg:text-2xl text-gray-800 font-medium min-h-[64px] flex items-center justify-center text-center px-2">
+            </div>
+
+            {/* Race Radio Terminal Box for Compliment */}
+            <div className="w-full bg-gray-900 text-white rounded-2xl p-4 sm:p-6 border-2 border-pink-500/40 shadow-inner flex flex-col justify-center items-center min-h-[110px]">
+              <p className="text-pink-400 text-[10px] uppercase font-mono font-bold tracking-widest mb-1.5">
+                [PIT-WALL TRANSMISSION]
+              </p>
+              <p className="text-base sm:text-xl lg:text-2xl font-medium text-center text-white">
                 {typedText || "Hit Box Box for your race radio compliment! 🏁"}
               </p>
             </div>
 
-            {/* F1 Super-Fan Pit Dashboard */}
-            <div className="w-full grid grid-cols-3 gap-2 bg-pink-50/90 p-3 rounded-2xl border border-pink-200 text-xs sm:text-sm my-2">
+            {/* F1 Pit Dashboard */}
+            <div className="w-full grid grid-cols-3 gap-2 bg-pink-50/90 p-3 rounded-2xl border border-pink-200 text-xs sm:text-sm">
               <div className="flex flex-col items-center justify-center">
                 <span className="text-gray-500 text-[9px] sm:text-[10px] font-bold uppercase">
                   Pit Stop
@@ -210,8 +220,8 @@ export default function App() {
               </div>
             </div>
 
-            {/* F1 Race Action Buttons */}
-            <div className="w-full pt-2">
+            {/* Action Buttons */}
+            <div className="w-full flex flex-col items-center gap-2">
               <button
                 onClick={getRandomCompliment}
                 className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-extrabold py-3.5 sm:py-4 px-6 rounded-full transition w-full shadow-lg hover:shadow-xl text-base sm:text-lg flex items-center justify-center gap-2 uppercase tracking-wide"
@@ -220,7 +230,7 @@ export default function App() {
               </button>
               <button
                 onClick={toggleMute}
-                className="text-xs sm:text-sm text-gray-600 underline mt-2 hover:text-pink-600 block mx-auto font-medium"
+                className="text-xs sm:text-sm text-gray-600 underline hover:text-pink-600 block mx-auto font-medium"
               >
                 {isMuted ? "📻 Unmute Team Radio" : "🔇 Mute Team Radio"}
               </button>
