@@ -138,14 +138,14 @@ export default function App() {
       {showConfetti && <Confetti />}
       <audio ref={audioRef} src={song} loop />
 
-      {/* Optimized top spacer for mobile */}
-      <div className="h-[26vh] sm:h-28 md:h-[28vh] lg:h-0 w-full z-10 shrink-0"></div>
+      {/* Top spacer set to h-[22vh] to give space for larger boxes below the face */}
+      <div className="h-[22vh] sm:h-24 md:h-[26vh] lg:h-0 w-full z-10 shrink-0"></div>
 
       {/* Main content container */}
-      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-60 z-10 mb-auto lg:my-auto">
-        {/* Photo gallery section */}
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-40 z-10 mb-auto lg:my-auto">
+        {/* Photo gallery section with increased dimensions */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="relative w-[92%] max-w-sm lg:max-w-md h-60 sm:h-64 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
+          <div className="relative w-[95%] max-w-md h-72 sm:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
             <img
               src={sisterPhotos[currentPhotoIndex]}
               alt="My wonderful sister"
@@ -154,18 +154,18 @@ export default function App() {
           </div>
         </div>
 
-        {/* Compliment section */}
+        {/* Compliment section with increased dimensions */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="bg-white/90 backdrop-blur-md p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl shadow-2xl w-[92%] max-w-sm lg:max-w-md border border-pink-200">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4 text-pink-700">
+          <div className="bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-2xl w-[95%] max-w-md border border-pink-200">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-pink-700">
               Hey My dear F1 Best Friend 💖
             </h1>
-            <p className="text-sm sm:text-base lg:text-xl mb-4 sm:mb-6 text-gray-700 min-h-[48px] sm:min-h-[56px] flex items-center justify-center">
+            <p className="text-base sm:text-lg lg:text-xl mb-5 sm:mb-6 text-gray-700 min-h-[56px] flex items-center justify-center">
               {typedText}
             </p>
             <button
               onClick={getRandomCompliment}
-              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2.5 sm:py-3 px-6 rounded-full transition w-full shadow-md hover:shadow-lg text-sm sm:text-base"
+              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-full transition w-full shadow-md hover:shadow-lg text-base"
             >
               Get Compliment 💬
             </button>
