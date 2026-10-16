@@ -143,9 +143,9 @@ export default function App() {
 
       {/* Main content container */}
       <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-10 lg:gap-80 z-10 mb-8 lg:my-auto px-2 sm:px-4">
-        {/* Photo gallery section - Taller height for mobile */}
+        {/* Photo gallery section - Fixed equal height matching Card 2 */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="relative w-full aspect-[10/11] lg:aspect-auto lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
+          <div className="relative w-full h-[58vh] lg:h-[550px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
             <img
               src={sisterPhotos[currentPhotoIndex]}
               alt="My wonderful sister"
@@ -159,9 +159,9 @@ export default function App() {
           </div>
         </div>
 
-        {/* Compliment section - Dynamically fits content without empty space */}
+        {/* Compliment section - Fixed equal height matching Card 1 with spaced out layout */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="bg-white/95 backdrop-blur-md p-5 sm:p-8 rounded-3xl shadow-2xl w-full h-auto flex flex-col items-center border border-pink-200 relative gap-4">
+          <div className="bg-white/95 backdrop-blur-md p-5 sm:p-8 rounded-3xl shadow-2xl w-full h-[58vh] lg:h-[550px] flex flex-col justify-between items-center border border-pink-200 relative">
             {/* Top F1 Status Bar */}
             <div className="w-full flex justify-between items-center bg-gray-950 text-white text-[10px] sm:text-xs font-mono font-bold px-3 py-2 rounded-xl">
               <span className="text-emerald-400 flex items-center gap-1">
@@ -173,7 +173,7 @@ export default function App() {
             </div>
 
             {/* Header & Subtitle */}
-            <div className="w-full flex flex-col items-center">
+            <div className="w-full flex flex-col items-center py-1">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-pink-700 tracking-tight">
                 Hey My F1 Bestie! 🏎️💨
               </h1>
@@ -182,9 +182,9 @@ export default function App() {
               </p>
             </div>
 
-            {/* Race Radio Terminal Box for Compliment */}
-            <div className="w-full bg-gray-900 text-white rounded-2xl p-4 sm:p-6 border-2 border-pink-500/40 shadow-inner flex flex-col justify-center items-center min-h-[110px]">
-              <p className="text-pink-400 text-[10px] uppercase font-mono font-bold tracking-widest mb-1.5">
+            {/* Race Radio Terminal Box - Expands evenly to fill vertical space */}
+            <div className="w-full bg-gray-900 text-white rounded-2xl p-4 sm:p-6 border-2 border-pink-500/40 shadow-inner flex flex-col justify-center items-center flex-1 my-2">
+              <p className="text-pink-400 text-[10px] uppercase font-mono font-bold tracking-widest mb-2">
                 [PIT-WALL TRANSMISSION]
               </p>
               <p className="text-base sm:text-xl lg:text-2xl font-medium text-center text-white">
@@ -193,7 +193,7 @@ export default function App() {
             </div>
 
             {/* F1 Pit Dashboard */}
-            <div className="w-full grid grid-cols-3 gap-2 bg-pink-50/90 p-3 rounded-2xl border border-pink-200 text-xs sm:text-sm">
+            <div className="w-full grid grid-cols-3 gap-2 bg-pink-50/90 p-3 rounded-2xl border border-pink-200 text-xs sm:text-sm my-1">
               <div className="flex flex-col items-center justify-center">
                 <span className="text-gray-500 text-[9px] sm:text-[10px] font-bold uppercase">
                   Pit Stop
@@ -221,7 +221,7 @@ export default function App() {
             </div>
 
             {/* Action Buttons */}
-            <div className="w-full flex flex-col items-center gap-2">
+            <div className="w-full flex flex-col items-center gap-2 pt-1">
               <button
                 onClick={getRandomCompliment}
                 className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-extrabold py-3.5 sm:py-4 px-6 rounded-full transition w-full shadow-lg hover:shadow-xl text-base sm:text-lg flex items-center justify-center gap-2 uppercase tracking-wide"
