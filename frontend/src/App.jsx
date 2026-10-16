@@ -124,7 +124,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-between text-center p-3 sm:p-6 relative overflow-y-auto overflow-x-hidden">
+    <div className="min-h-screen w-full flex flex-col items-center justify-between text-center p-2 sm:p-6 relative overflow-y-auto overflow-x-hidden">
       {/* Background Image Layer */}
       <div className="fixed inset-0 z-0">
         <img
@@ -138,14 +138,14 @@ export default function App() {
       {showConfetti && <Confetti />}
       <audio ref={audioRef} src={song} loop />
 
-      {/* Top spacer positions content right below Kimi's full face */}
+      {/* Top spacer starts content right after Kimi's face and cap */}
       <div className="h-[45vh] sm:h-[40vh] lg:h-0 w-full z-10 shrink-0"></div>
 
       {/* Main content container */}
-      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-12 lg:gap-80 z-10 mb-8 lg:my-auto">
-        {/* Photo gallery section - Perfectly square box */}
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-10 lg:gap-80 z-10 mb-8 lg:my-auto px-1 sm:px-4">
+        {/* Photo gallery section - Full width box */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="relative w-[95%] max-w-lg aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
+          <div className="relative w-full aspect-square max-w-xl rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
             <img
               src={sisterPhotos[currentPhotoIndex]}
               alt="My wonderful sister"
@@ -154,14 +154,14 @@ export default function App() {
           </div>
         </div>
 
-        {/* Compliment section - Perfectly square box matching photo box */}
+        {/* Compliment section - Full width box matching photo box */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="bg-white/95 backdrop-blur-md p-6 sm:p-10 rounded-3xl shadow-2xl w-[95%] max-w-lg aspect-square flex flex-col justify-between items-center border border-pink-200">
+          <div className="bg-white/95 backdrop-blur-md p-6 sm:p-10 rounded-3xl shadow-2xl w-full aspect-square max-w-xl flex flex-col justify-between items-center border border-pink-200">
             <div className="w-full flex-1 flex flex-col justify-center items-center">
-              <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-pink-700">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-pink-700">
                 Hey My dear F1 Best Friend 💖
               </h1>
-              <p className="text-base sm:text-xl text-gray-700 min-h-[64px] flex items-center justify-center text-center">
+              <p className="text-base sm:text-xl lg:text-2xl text-gray-700 min-h-[64px] flex items-center justify-center text-center">
                 {typedText}
               </p>
             </div>
@@ -169,7 +169,7 @@ export default function App() {
             <div className="w-full pt-4">
               <button
                 onClick={getRandomCompliment}
-                className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3.5 sm:py-4 px-6 rounded-full transition w-full shadow-lg hover:shadow-xl text-base sm:text-lg"
+                className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 px-6 rounded-full transition w-full shadow-lg hover:shadow-xl text-base sm:text-lg"
               >
                 Get Compliment 💬
               </button>
