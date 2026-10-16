@@ -138,14 +138,14 @@ export default function App() {
       {showConfetti && <Confetti />}
       <audio ref={audioRef} src={song} loop />
 
-      {/* Top spacer (h-[28vh]) pushes the boxes slightly down on mobile */}
-      <div className="h-[28vh] sm:h-[28vh] md:h-0 w-full z-10 shrink-0"></div>
+      {/* Top spacer keeps driver's face & cap clear on mobile/tablets */}
+      <div className="h-[28vh] sm:h-[28vh] lg:h-0 w-full z-10 shrink-0"></div>
 
-      {/* Main content container */}
-      <div className="w-full max-w-7xl flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-60 z-10 mb-auto md:my-auto">
+      {/* Main content container: flex-col on all phones & tablets, flex-row on desktop (lg:) */}
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-60 z-10 mb-auto lg:my-auto">
         {/* Photo gallery section */}
-        <div className="w-full md:w-1/2 flex flex-col items-center">
-          <div className="relative w-[92%] sm:w-[85%] md:w-full max-w-md h-64 sm:h-72 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
+        <div className="w-full lg:w-1/2 flex flex-col items-center">
+          <div className="relative w-[92%] sm:w-[85%] lg:w-full max-w-md h-64 sm:h-72 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
             <img
               src={sisterPhotos[currentPhotoIndex]}
               alt="My wonderful sister"
@@ -155,8 +155,8 @@ export default function App() {
         </div>
 
         {/* Compliment section */}
-        <div className="w-full md:w-1/2 flex flex-col items-center">
-          <div className="bg-white/90 backdrop-blur-md p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl shadow-2xl w-[92%] sm:w-[85%] md:w-full max-w-md border border-pink-200">
+        <div className="w-full lg:w-1/2 flex flex-col items-center">
+          <div className="bg-white/90 backdrop-blur-md p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl shadow-2xl w-[92%] sm:w-[85%] lg:w-full max-w-md border border-pink-200">
             <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4 text-pink-700">
               Hey My dear F1 Best Friend 💖
             </h1>
