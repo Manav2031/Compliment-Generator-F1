@@ -302,7 +302,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="text-gray-700 text-sm mt-8 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm">
-        Made with 💙 by your F1 best friend
+        Made with 💙 by your F1 Best Friend
       </footer>
     </div>
   );
