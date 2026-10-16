@@ -124,7 +124,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-between text-center p-3 sm:p-6 relative overflow-y-auto overflow-x-hidden">
+    <div className="min-h-screen w-full flex flex-col items-center justify-between text-center p-2 sm:p-6 relative overflow-y-auto overflow-x-hidden">
       {/* Background Image Layer */}
       <div className="fixed inset-0 z-0">
         <img
@@ -138,14 +138,14 @@ export default function App() {
       {showConfetti && <Confetti />}
       <audio ref={audioRef} src={song} loop />
 
-      {/* Top spacer (50vh) keeps driver's cap and face completely unobstructed at the top */}
-      <div className="h-[50vh] sm:h-[45vh] lg:h-0 w-full z-10 shrink-0"></div>
+      {/* Top spacer (45vh) starts the content stack right after Kimi's full face/cap */}
+      <div className="h-[45vh] sm:h-[40vh] lg:h-0 w-full z-10 shrink-0"></div>
 
       {/* Main content container */}
-      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-10 lg:gap-60 z-10 mb-8 lg:my-auto">
-        {/* Photo gallery section - Maximum mobile height and width */}
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-12 lg:gap-80 z-10 mb-8 lg:my-auto">
+        {/* Photo gallery section - Near full screen height & width on mobile */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="relative w-full max-w-lg h-96 sm:h-[420px] lg:h-[450px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
+          <div className="relative w-[98%] max-w-xl h-[65vh] sm:h-[70vh] lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/20">
             <img
               src={sisterPhotos[currentPhotoIndex]}
               alt="My wonderful sister"
@@ -154,24 +154,24 @@ export default function App() {
           </div>
         </div>
 
-        {/* Compliment section - Maximum mobile height and padding */}
+        {/* Compliment section - Near full screen height & width on mobile */}
         <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <div className="bg-white/90 backdrop-blur-md p-7 sm:p-10 rounded-3xl shadow-2xl w-full max-w-lg border border-pink-200">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-pink-700">
+          <div className="bg-white/95 backdrop-blur-md p-8 sm:p-12 rounded-3xl shadow-2xl w-[98%] max-w-xl min-h-[60vh] sm:min-h-[65vh] lg:min-h-0 flex flex-col justify-center items-center border border-pink-200">
+            <h1 className="text-2xl sm:text-4xl font-bold mb-6 text-pink-700">
               Hey My dear F1 Best Friend 💖
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 text-gray-700 min-h-[72px] flex items-center justify-center">
+            <p className="text-lg sm:text-2xl mb-8 text-gray-700 min-h-[80px] flex items-center justify-center text-center">
               {typedText}
             </p>
             <button
               onClick={getRandomCompliment}
-              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 px-8 rounded-full transition w-full shadow-md hover:shadow-lg text-lg"
+              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 sm:py-5 px-8 rounded-full transition w-full shadow-lg hover:shadow-xl text-lg sm:text-xl"
             >
               Get Compliment 💬
             </button>
             <button
               onClick={toggleMute}
-              className="text-sm sm:text-base text-gray-700 underline mt-5 hover:text-pink-600 block mx-auto"
+              className="text-sm sm:text-base text-gray-700 underline mt-6 hover:text-pink-600 block mx-auto"
             >
               {isMuted ? "🔈 Unmute Music" : "🔇 Mute Music"}
             </button>
@@ -179,8 +179,8 @@ export default function App() {
         </div>
       </div>
 
-      {/* Footer at the bottom of the scroll view */}
-      <footer className="text-white/90 text-xs sm:text-sm mt-6 px-5 py-2.5 rounded-full bg-black/50 backdrop-blur-sm z-10 shrink-0 mb-6">
+      {/* Footer at the end of the scroll */}
+      <footer className="text-white/90 text-xs sm:text-sm mt-8 px-6 py-3 rounded-full bg-black/50 backdrop-blur-sm z-10 shrink-0 mb-8">
         Made with 💙 by your F1 Best Friend
       </footer>
     </div>
